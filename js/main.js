@@ -1,5 +1,110 @@
+const Home = {
+    template: `
+      <div>
 
-const app = Vue.createApp({})
+        <headers></headers>
+
+        <banner></banner>
+
+        <h1 class="text-center"><b>專案</b></h1>
+        <div class="album py-5 bg-light">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <project-card
+                      title="Chronus"
+                      description="一個簡潔有力的任務管理工具"
+                      image="images/ch.png"
+                      github-link="https://github.com/Diego09182/Chronus"
+                  ></project-card>
+              </div>
+              <div class="col">
+                <project-card
+                    title="SwiftFox"
+                    description="一個藉由Laravel開發支援論壇、文章、投票、圖片上傳的學生交流系統"
+                    image="images/SWIFT FOX LOGO.png"
+                    github-link="https://github.com/Diego09182/SwiftFox"
+                ></project-card>
+              </div>
+              <div class="col">
+                <project-card
+                    title="TNS"
+                    description="一個用Laravel串接台灣新聞API的專案範例"
+                    image="images/TAIWAN.png"
+                    github-link="https://github.com/Diego09182/TNS"
+                ></project-card>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container py-5">
+            <h2 class="pb-2 border-bottom"><b>特色</b></h2>
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col">
+                <feature-card title="精實的後端工程" image="images/Laravel.png" technology="Laravel"/>
+            </div>
+            <div class="col">
+                <feature-card title="優美的前端工程" image="images/Vue.js.png" technology="Vue"/>
+            </div>
+            <div class="col">
+                <feature-card title="資料庫查詢優化" image="images/MySQL.png" technology="MySQL"/>
+            </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <h2 class="pb-2 border-bottom"><b>技術堆棧</b></h2>
+            <ul class="nav nav-tabs" id="myTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">後端</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">前端</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">資料庫</a>
+                </li>
+            </ul>
+            <div class="tab-content mt-2">
+                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                    <laravel></laravel>
+                </div>
+                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                    <vue></vue>
+                </div>
+                <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                    <mysql></mysql>
+                </div>
+            </div>
+        </div>
+
+        <slogan></slogan>
+
+      </div>
+    `
+};  
+
+const About = { 
+    template: 
+        `<div>
+            <headers></headers>
+            <banner></banner>
+            <about></about>
+        </div>` 
+}
+ 
+const routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About },
+]
+ 
+const router = VueRouter.createRouter({
+  history: VueRouter.createWebHashHistory(),
+  routes,
+})
+
+const app = Vue.createApp({ });
 
 app.component('headers', {
     data() {
@@ -35,6 +140,10 @@ app.component('headers', {
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                             <strong>Work</strong>
                         </a>
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                            <li><a class="nav-link px-2 text-white"><router-link to="/">Home</router-link></a></li>
+                            <li><a class="nav-link px-2 text-white"><router-link to="/about">About</router-link></a></li>
+                        </ul>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -46,10 +155,27 @@ app.component('headers', {
 
 app.component('banner', {
     data() {
-        return {
-            name: '張皓明',
-            role: '一個Laravel開發者'
-        };
+      return {
+        i: 0,
+        speed: 300,
+        typedRole: '',
+        name: '張皓明',
+        role: '一個Laravel開發者'
+      };
+    },
+    methods: {
+      typeWriter() {
+        if (this.i < this.role.length) {
+          if (this.i < this.role.length) {
+            this.typedRole += this.role.charAt(this.i);
+          }
+          this.i++;
+          setTimeout(this.typeWriter, this.speed);
+        }
+      }
+    },
+    mounted() {
+      this.typeWriter();
     },
     template: 
         `<div>
@@ -57,13 +183,56 @@ app.component('banner', {
                 <div class="row py-lg-5">
                     <div class="col-lg-6 col-md-8 mx-auto">
                         <h1><b>{{ name }}</b></h1>
-                        <h1><b>{{ role }}</b></h1>
+                        <h1><b>{{ typedRole }}</b></h1>
                     </div>
                 </div>
             </section>
         </div>`
 });
 
+app.component('about', {
+    data() {
+      return {
+        i: 0,
+        speed: 200,
+        typedAbout: '',
+        title: '關於我',
+        about: '專精於 Laravel 與 Vue 建立網頁應用程式的工程師。',
+      };
+    },
+    methods: {
+      typeWriter() {
+        if (this.i <= this.about.length) {
+          if (this.i <= this.about.length) {
+            this.typedAbout += this.about.charAt(this.i);
+          }
+          this.i++;
+          if (this.i === this.about.length) {
+            this.i = 0;
+            this.typedTitle = '';
+            this.typedAbout = '';
+          }
+          setTimeout(this.typeWriter, this.speed);
+        }
+      },
+      startTyping() {
+        this.typeWriter();
+      },
+    },
+    mounted() {
+      this.startTyping();
+    },
+    template: 
+      `<div class="container py-5">
+          <h1 class="text-center"><b>{{ title }}</b></h1>
+          <div class="text-center">
+              <img src="images/Laravel.png" alt="Your Image" class="rounded-circle" id="avatar">
+              <br><br>
+              <h2><b>{{ typedAbout }}</b></h2>
+          </div>
+      </div>`
+});
+  
 app.component('project-card', {
     data() {
         return {
@@ -112,7 +281,131 @@ app.component('feature-card', {
         </div>`
 });
 
-  app.component('footers', {
+app.component('laravel', {
+    data() {
+        return {
+            title: 'Laravel',
+            subtitle: '一個漸進式的網頁應用開發框架',
+            description: '我使用具有MVC架構、模板引擎、資料庫遷移的PHP框架建構網頁應用程式',
+            laravelLink: 'https://laravel.com/',
+            githubLink: 'https://github.com/laravel/laravel',
+            imageSrc: 'images/Laravel.png',
+            imageAlt: 'Laravel Framework Image',
+            imageWidth: 720
+        };
+    },
+    template: 
+    `<div class="container my-5">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <h1 class="display-4 fw-bold lh-1">{{ title }}</h1>
+            <h1 class="display-4 fw-bold lh-1">{{ subtitle }}</h1>
+            <p class="lead">{{ description }}</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+            <a :href="laravelLink" class="btn btn-danger btn-lg px-4 me-md-2 fw-bold">Laravel</a>
+            <a :href="githubLink" class="btn btn-outline-danger btn-lg px-4">Github</a>
+            </div>
+        </div>
+        <div class="col-lg-4 offset-lg-1 p-0 position-relative overflow-hidden shadow-lg">
+            <div class="position-lg-absolute top-0 left-0 overflow-hidden">
+            <img class="img-fluid" :src="imageSrc" :alt="imageAlt" :width="imageWidth">
+            </div>
+        </div>
+        </div>
+    </div>`
+});
+
+app.component('vue', {
+    data() {
+        return {
+            title: 'Vue.js',
+            subtitle: '一個漸進式的前端開發框架',
+            description: '我使用具有聲明式渲染與反應性的JavaScript框架建構網頁應用程式',
+            laravelLink: 'https://vuejs.org/',
+            githubLink: 'https://github.com/vuejs/vue',
+            imageSrc: 'images/Vue.js.png',
+            imageAlt: 'Vue Framework Image',
+            imageWidth: 720
+        };
+    },
+    template: 
+        `<div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                <h1 class="display-4 fw-bold lh-1">{{ title }}</h1>
+                <h1 class="display-4 fw-bold lh-1">{{ subtitle }}</h1>
+                <p class="lead">{{ description }}</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                <a :href="laravelLink" class="btn btn-success btn-lg px-4 me-md-2 fw-bold">Vue.js</a>
+                <a :href="githubLink" class="btn btn-outline-success btn-lg px-4">Github</a>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 position-relative overflow-hidden shadow-lg">
+                <div class="position-lg-absolute top-0 left-0 overflow-hidden">
+                <img class="img-fluid" :src="imageSrc" :alt="imageAlt" :width="imageWidth">
+                </div>
+            </div>
+            </div>
+        </div>`
+});
+
+app.component('mysql', {
+    data() {
+        return {
+            title: 'MySQL',
+            subtitle: '一個開放原始碼的關聯式資料庫管理系統',
+            description: '我使用最熱門的資料庫管理系統，支援資料庫服務',
+            laravelLink: 'https://www.mysql.com/',
+            githubLink: 'https://github.com/mysql/mysql-server',
+            imageSrc: 'images/MySQL.png',
+            imageAlt: 'MySQL Image',
+            imageWidth: 720
+        };
+    },
+    template: 
+        `<div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                <h1 class="display-4 fw-bold lh-1">{{ title }}</h1>
+                <h1 class="display-4 fw-bold lh-1">{{ subtitle }}</h1>
+                <p class="lead">{{ description }}</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                <a :href="laravelLink" class="btn btn-info btn-lg px-4 me-md-2 fw-bold">MySQL</a>
+                <a :href="githubLink" class="btn btn-outline-info btn-lg px-4">Github</a>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 position-relative overflow-hidden shadow-lg">
+                <div class="position-lg-absolute top-0 left-0 overflow-hidden">
+                <img class="img-fluid" :src="imageSrc" :alt="imageAlt" :width="imageWidth">
+                </div>
+            </div>
+            </div>
+        </div>`
+});
+
+app.component('slogan', {
+    data() {
+        return {
+            title:'Web development',
+            slogan:'I am committed to learning web development.',
+            githublink:'https://github.com/Diego09182/work'
+        };
+    },
+    template: 
+        `<div class="bg-dark text-secondary px-4 py-5 text-center">
+            <div class="py-5">
+            <h1 class="display-5 fw-bold text-white">{{ title }}</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="fs-5 mb-4">{{ slogan }}</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a :href="githublink" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Github</a>
+                </div>
+            </div>
+            </div>
+        </div>`
+})
+
+app.component('footers', {
     data() {
         return {
             copyright: '作品集內容版權所有，但是專案都在 MIT 條款下公開',
@@ -177,5 +470,7 @@ app.component('feature-card', {
             </div>
         </footer>`
 });
+
+app.use(router)
 
 app.mount('#app')

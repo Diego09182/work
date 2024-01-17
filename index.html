@@ -14,57 +14,7 @@
 
 <main>
 
-  <headers></headers>
-
-  <banner></banner>
-
-  <h1 class="text-center"><b>專案</b></h1>
-  
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <project-card
-                title="Chronus"
-                description="一個簡潔有力的任務管理工具"
-                image="images/ch.png"
-                github-link="https://github.com/Diego09182/Chronus"
-            ></project-card>
-        </div>
-        <div class="col">
-          <project-card
-              title="SwiftFox"
-              description="一個藉由Laravel開發支援論壇、文章、投票、圖片上傳的學生交流系統"
-              image="images/SWIFT FOX LOGO.png"
-              github-link="https://github.com/Diego09182/SwiftFox"
-          ></project-card>
-        </div>
-        <div class="col">
-          <project-card
-              title="TNS"
-              description="一個用Laravel串接台灣新聞API的專案範例"
-              image="images/TAIWAN.png"
-              github-link="https://github.com/Diego09182/TNS"
-          ></project-card>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container px-4 py-5" id="custom-cards">
-    <h2 class="pb-2 border-bottom"><b>特色</b></h2>
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-      <div class="col">
-        <feature-card title="精實的後端工程" image="images/Laravel.png" technology="Laravel"/>
-      </div>
-      <div class="col">
-        <feature-card title="優美的前端工程" image="images/Vue.js.png" technology="Vue"/>
-      </div>
-      <div class="col">
-        <feature-card title="資料庫查詢優化" image="images/MySQL.png" technology="MySQL"/>
-      </div>
-    </div>
-  </div>
+  <router-view></router-view>
 
 </main>
 
@@ -73,6 +23,7 @@
 </div>
 </body>
 <script src="https://cdn.staticfile.org/vue/3.2.36/vue.global.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/vue-router@4"></script>
 <script src="js/main.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 </html>

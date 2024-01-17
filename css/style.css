@@ -11,3 +11,8 @@
         font-size: 3.5rem;
         }
     }
+
+    #avatar {
+        width: 150px; /* 你希望的宽度 */
+        height: 150px; /* 你希望的高度 */
+    }
