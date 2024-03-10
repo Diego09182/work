@@ -1,95 +1,116 @@
 const Home = {
-    template: `
-      <div>
-
-        <headers></headers>
-
-        <banner></banner>
-
-        <h1 class="text-center"><b>專案</b></h1>
-        <div class="album py-5 bg-light">
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <project-card
-                      title="Chronus"
-                      description="一個簡潔有力的任務管理工具"
-                      image="images/ch.png"
-                      github-link="https://github.com/Diego09182/Chronus"
-                  ></project-card>
-              </div>
-              <div class="col">
-                <project-card
-                    title="SwiftFox"
-                    description="一個藉由Laravel開發支援論壇、文章、投票、圖片上傳的學生交流系統"
-                    image="images/SWIFT FOX LOGO.png"
-                    github-link="https://github.com/Diego09182/SwiftFox"
-                ></project-card>
-              </div>
-              <div class="col">
-                <project-card
-                    title="TNS"
-                    description="一個用Laravel串接台灣新聞API的專案範例"
-                    image="images/TAIWAN.png"
-                    github-link="https://github.com/Diego09182/TNS"
-                ></project-card>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container py-5">
-            <h2 class="pb-2 border-bottom"><b>特色</b></h2>
-            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-            <div class="col">
-                <feature-card title="精實的後端工程" image="images/Laravel.png" technology="Laravel"/>
-            </div>
-            <div class="col">
-                <feature-card title="優美的前端工程" image="images/Vue.js.png" technology="Vue"/>
-            </div>
-            <div class="col">
-                <feature-card title="資料庫查詢優化" image="images/MySQL.png" technology="MySQL"/>
-            </div>
-            </div>
-        </div>
-
-        <div class="container my-5">
-            <h2 class="pb-2 border-bottom"><b>技術堆棧</b></h2>
-            <ul class="nav nav-tabs" id="myTabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">後端</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">前端</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">資料庫</a>
-                </li>
-            </ul>
-            <div class="tab-content mt-2">
-                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-                    <laravel></laravel>
-                </div>
-                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-                    <vue></vue>
-                </div>
-                <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-                    <mysql></mysql>
+    template: 
+        `<div>
+            <headers></headers>
+            <banner></banner>
+            <h1 class="text-center"><b>專案</b></h1>
+            <div class="album py-5 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <project-card
+                                title="Chronus"
+                                description="一個簡潔有力的任務管理工具"
+                                image="images/ch.png"
+                                github-link="https://github.com/Diego09182/Chronus"
+                            ></project-card>
+                        </div>
+                        <div class="col-4">
+                            <project-card
+                                title="SwiftFox"
+                                description="一個藉由Laravel開發支援論壇、文章、投票、圖片上傳的學生交流系統"
+                                image="images/SWIFT FOX LOGO.png"
+                                github-link="https://github.com/Diego09182/SwiftFox"
+                            ></project-card>
+                        </div>
+                        <div class="col-4">
+                            <project-card
+                                title="TNS"
+                                description="一個用Laravel串接台灣新聞API的專案範例"
+                                image="images/TAIWAN.png"
+                                github-link="https://github.com/Diego09182/TNS"
+                            ></project-card>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <project-card
+                                title="BookShop"
+                                description="簡易的電商網站"
+                                image="images/SHOP.png"
+                                github-link="https://github.com/Diego09182/BookStore"
+                            ></project-card>
+                        </div>
+                        <div class="col-4">
+                            <project-card
+                                title="Weather"
+                                description="氣象資料APP"
+                                image="images/weather.png"
+                                github-link="https://github.com/Diego09182/Weather"
+                            ></project-card>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <slogan></slogan>
-
-      </div>
-    `
+            <div class="container py-5">
+                <h2 class="pb-2 border-bottom"><b>特色</b></h2>
+                <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                <div class="col">
+                    <feature-card title="精實的後端工程" image="images/Laravel.png" technology="Laravel"/>
+                </div>
+                <div class="col">
+                    <feature-card title="優美的前端工程" image="images/Vue.js.png" technology="Vue"/>
+                </div>
+                <div class="col">
+                    <feature-card title="資料庫查詢優化" image="images/MySQL.png" technology="MySQL"/>
+                </div>
+                </div>
+            </div>
+            <div class="container my-5">
+                <h2 class="pb-2 border-bottom"><b>技術堆棧</b></h2>
+                <ul class="nav nav-tabs" id="myTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">後端</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">前端</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">資料庫</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="tab4-tab" data-bs-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">版本控管</a></a></a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="tab5-tab" data-bs-toggle="tab" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">作業系統</a>
+                    </li>
+                </ul>
+                <div class="tab-content mt-2">
+                    <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                        <laravel></laravel>
+                    </div>
+                    <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                        <vue></vue>
+                    </div>
+                    <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                        <mysql></mysql>
+                    </div>
+                    <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+                        <git></git>
+                    </div>
+                    <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
+                        <linux></linux>
+                    </div>
+                </div>
+            </div>
+            <slogan></slogan>
+        </div>`
 };  
 
 const About = { 
     template: 
         `<div>
             <headers></headers>
-            <banner></banner>
             <about></about>
         </div>` 
 }
@@ -157,10 +178,13 @@ app.component('banner', {
     data() {
       return {
         i: 0,
-        speed: 300,
+        speed: 400,
         typedRole: '',
         name: '張皓明',
-        role: '一個Laravel開發者'
+        introduce: '熱愛學習後端工程技術',
+        role: '擅長使用Laravel與Vue開發應用程式',
+        websiteLink: 'https://diego09182.github.io/work/#/',
+        githubLink: 'https://github.com/Diego09182'
       };
     },
     methods: {
@@ -172,23 +196,39 @@ app.component('banner', {
           this.i++;
           setTimeout(this.typeWriter, this.speed);
         }
+      },
+      openWebsite() {
+        window.location.href = this.websiteLink;
+      },
+      openGithub() {
+        window.location.href = this.githubLink;
       }
     },
     mounted() {
       this.typeWriter();
     },
     template: 
-        `<div>
-            <section class="py-2 text-center container">
-                <div class="row py-lg-5">
-                    <div class="col-lg-6 col-md-8 mx-auto">
-                        <h1><b>{{ name }}</b></h1>
-                        <h1><b>{{ typedRole }}</b></h1>
+        `<section class="banner px-3">
+            <div class="container overflow-hidden">
+                <div class="row gy-3 gy-lg-0 align-items-lg-center justify-content-lg-between">
+                    <div class="col-12 col-lg-6 order-1 order-lg-0">
+                        <h1 class="display-3 fw-bold mb-4">{{ name }}</h1>
+                        <h2 class="display-5 fw-bold"><b>{{ introduce }}</b></h2>
+                        <h2 class="display-5 fw-bold"><b>{{ typedRole }}</b></h2>
+                        <br><br><br><br><br><br>
+                        <div class="d-grid gap-2 d-sm-flex">
+                            <button type="button" class="btn btn-dark btn-lg rounded-pill main-btn" @click="openWebsite"><b>Website</b></button>
+                            <button type="button" class="btn btn-outline-dark btn-lg rounded-pill main-btn" @click="openGithub"><b>Github</b></button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-5 text-center">
+                        <img class="img-fluid" src="images/Code.png" alt="Coding">
                     </div>
                 </div>
-            </section>
-        </div>`
+            </div>
+        </section>`
 });
+
 
 app.component('about', {
     data() {
@@ -207,20 +247,12 @@ app.component('about', {
             this.typedAbout += this.about.charAt(this.i);
           }
           this.i++;
-          if (this.i === this.about.length) {
-            this.i = 0;
-            this.typedTitle = '';
-            this.typedAbout = '';
-          }
           setTimeout(this.typeWriter, this.speed);
         }
-      },
-      startTyping() {
-        this.typeWriter();
-      },
+      }
     },
     mounted() {
-      this.startTyping();
+      this.typeWriter();
     },
     template: 
       `<div class="container py-5">
@@ -260,23 +292,21 @@ app.component('project-card', {
 app.component('feature-card', {
     props: ['title', 'image', 'technology', 'days'],
     template: 
-        `<div>
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" :style="{ backgroundImage: 'url(' + image + ')' }">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{ title }}</h2>
-                    <ul class="d-flex list-unstyled mt-auto">
-                        <li class="me-auto">
-                            <img :src="image" alt="Logo" width="32" height="32" class="rounded-circle border border-white">
-                        </li>
-                        <li class="d-flex align-items-center me-3">
-                            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                            <small>{{ technology }}</small>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                        </li>
-                    </ul>
-                </div>
+        `<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg hover" :style="{ backgroundImage: 'url(' + image + ')' }">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{ title }}</h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                    <li class="me-auto">
+                        <img :src="image" alt="Logo" width="32" height="32" class="rounded-circle border border-white">
+                    </li>
+                    <li class="d-flex align-items-center me-3">
+                        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                        <small>{{ technology }}</small>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                    </li>
+                </ul>
             </div>
         </div>`
 });
@@ -287,7 +317,7 @@ app.component('laravel', {
             title: 'Laravel',
             subtitle: '一個漸進式的網頁應用開發框架',
             description: '我使用具有MVC架構、模板引擎、資料庫遷移的PHP框架建構網頁應用程式',
-            laravelLink: 'https://laravel.com/',
+            officialLink: 'https://laravel.com/',
             githubLink: 'https://github.com/laravel/laravel',
             imageSrc: 'images/Laravel.png',
             imageAlt: 'Laravel Framework Image',
@@ -295,24 +325,24 @@ app.component('laravel', {
         };
     },
     template: 
-    `<div class="container my-5">
-        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-            <h1 class="display-4 fw-bold lh-1">{{ title }}</h1>
-            <h1 class="display-4 fw-bold lh-1">{{ subtitle }}</h1>
-            <p class="lead">{{ description }}</p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-            <a :href="laravelLink" class="btn btn-danger btn-lg px-4 me-md-2 fw-bold">Laravel</a>
-            <a :href="githubLink" class="btn btn-outline-danger btn-lg px-4">Github</a>
+        `<div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+                <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                    <h1 class="display-4 fw-bold lh-1">{{ title }}</h1>
+                    <h1 class="display-4 fw-bold lh-1">{{ subtitle }}</h1>
+                    <p class="lead">{{ description }}</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                        <a :href="officialLink" class="btn btn-danger btn-lg px-4 me-md-2 fw-bold">Laravel</a>
+                        <a :href="githubLink" class="btn btn-outline-danger btn-lg px-4">Github</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1 p-0 position-relative overflow-hidden shadow-lg">
+                    <div class="position-lg-absolute top-0 left-0 overflow-hidden">
+                        <img class="img-fluid" :src="imageSrc" :alt="imageAlt" :width="imageWidth">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4 offset-lg-1 p-0 position-relative overflow-hidden shadow-lg">
-            <div class="position-lg-absolute top-0 left-0 overflow-hidden">
-            <img class="img-fluid" :src="imageSrc" :alt="imageAlt" :width="imageWidth">
-            </div>
-        </div>
-        </div>
-    </div>`
+        </div>`
 });
 
 app.component('vue', {
@@ -321,7 +351,7 @@ app.component('vue', {
             title: 'Vue.js',
             subtitle: '一個漸進式的前端開發框架',
             description: '我使用具有聲明式渲染與反應性的JavaScript框架建構網頁應用程式',
-            laravelLink: 'https://vuejs.org/',
+            officialLink: 'https://vuejs.org/',
             githubLink: 'https://github.com/vuejs/vue',
             imageSrc: 'images/Vue.js.png',
             imageAlt: 'Vue Framework Image',
@@ -331,20 +361,20 @@ app.component('vue', {
     template: 
         `<div class="container my-5">
             <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-                <h1 class="display-4 fw-bold lh-1">{{ title }}</h1>
-                <h1 class="display-4 fw-bold lh-1">{{ subtitle }}</h1>
-                <p class="lead">{{ description }}</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-                <a :href="laravelLink" class="btn btn-success btn-lg px-4 me-md-2 fw-bold">Vue.js</a>
-                <a :href="githubLink" class="btn btn-outline-success btn-lg px-4">Github</a>
+                <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                    <h1 class="display-4 fw-bold lh-1">{{ title }}</h1>
+                    <h1 class="display-4 fw-bold lh-1">{{ subtitle }}</h1>
+                    <p class="lead">{{ description }}</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                        <a :href="officialLink" class="btn btn-success btn-lg px-4 me-md-2 fw-bold">Vue.js</a>
+                        <a :href="githubLink" class="btn btn-outline-success btn-lg px-4">Github</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4 offset-lg-1 p-0 position-relative overflow-hidden shadow-lg">
-                <div class="position-lg-absolute top-0 left-0 overflow-hidden">
-                <img class="img-fluid" :src="imageSrc" :alt="imageAlt" :width="imageWidth">
+                <div class="col-lg-4 offset-lg-1 p-0 position-relative overflow-hidden shadow-lg">
+                    <div class="position-lg-absolute top-0 left-0 overflow-hidden">
+                        <img class="img-fluid" :src="imageSrc" :alt="imageAlt" :width="imageWidth">
+                    </div>
                 </div>
-            </div>
             </div>
         </div>`
 });
@@ -355,7 +385,7 @@ app.component('mysql', {
             title: 'MySQL',
             subtitle: '一個開放原始碼的關聯式資料庫管理系統',
             description: '我使用最熱門的資料庫管理系統，支援資料庫服務',
-            laravelLink: 'https://www.mysql.com/',
+            officialLink: 'https://www.mysql.com/',
             githubLink: 'https://github.com/mysql/mysql-server',
             imageSrc: 'images/MySQL.png',
             imageAlt: 'MySQL Image',
@@ -365,20 +395,87 @@ app.component('mysql', {
     template: 
         `<div class="container my-5">
             <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-                <h1 class="display-4 fw-bold lh-1">{{ title }}</h1>
-                <h1 class="display-4 fw-bold lh-1">{{ subtitle }}</h1>
-                <p class="lead">{{ description }}</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-                <a :href="laravelLink" class="btn btn-info btn-lg px-4 me-md-2 fw-bold">MySQL</a>
-                <a :href="githubLink" class="btn btn-outline-info btn-lg px-4">Github</a>
+                <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                    <h1 class="display-4 fw-bold lh-1">{{ title }}</h1>
+                    <h1 class="display-4 fw-bold lh-1">{{ subtitle }}</h1>
+                    <p class="lead">{{ description }}</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                        <a :href="officialLink" class="btn btn-info btn-lg px-4 me-md-2 fw-bold">MySQL</a>
+                        <a :href="githubLink" class="btn btn-outline-info btn-lg px-4">Github</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1 p-0 position-relative overflow-hidden shadow-lg">
+                    <div class="position-lg-absolute top-0 left-0 overflow-hidden">
+                        <img class="img-fluid" :src="imageSrc" :alt="imageAlt" :width="imageWidth">
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4 offset-lg-1 p-0 position-relative overflow-hidden shadow-lg">
-                <div class="position-lg-absolute top-0 left-0 overflow-hidden">
-                <img class="img-fluid" :src="imageSrc" :alt="imageAlt" :width="imageWidth">
+        </div>`
+});
+
+app.component('git', {
+    data() {
+        return {
+            title: 'GIT',
+            subtitle: '一個分散式版本控制軟體',
+            description: '對於所有的專案進行版本控管與追蹤開發進度',
+            officialLink: 'https://git-scm.com/',
+            githubLink: 'https://github.com/mysql/mysql-server',
+            imageSrc: 'images/GIT.png',
+            imageAlt: 'GIT Image',
+            imageWidth: 720
+        };
+    },
+    template: 
+        `<div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+                <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                    <h1 class="display-4 fw-bold lh-1">{{ title }}</h1>
+                    <h1 class="display-4 fw-bold lh-1">{{ subtitle }}</h1>
+                    <p class="lead">{{ description }}</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                        <a :href="officialLink" class="btn btn-dark btn-lg px-4 me-md-2 fw-bold">GIT</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1 p-0 position-relative overflow-hidden shadow-lg">
+                    <div class="position-lg-absolute top-0 left-0 overflow-hidden">
+                        <img class="img-fluid" :src="imageSrc" :alt="imageAlt" :width="imageWidth">
+                    </div>
                 </div>
             </div>
+        </div>`
+});
+
+app.component('linux', {
+    data() {
+        return {
+            title: 'Linux',
+            subtitle: '一種自由和開放原始碼的類UNIX作業系統',
+            description: '使用開源的作業系統進行開發與部屬',
+            officialLink: 'https://www.linux.org/pages/download/',
+            githubLink: 'https://github.com/torvalds/linux',
+            imageSrc: 'images/Linux.png',
+            imageAlt: 'Linux Image',
+            imageWidth: 720
+        };
+    },
+    template: 
+        `<div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+                <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                    <h1 class="display-4 fw-bold lh-1">{{ title }}</h1>
+                    <h1 class="display-4 fw-bold lh-1">{{ subtitle }}</h1>
+                    <p class="lead">{{ description }}</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                        <a :href="officialLink" class="btn btn-warning btn-lg px-4 me-md-2 fw-bold">Linux</a>
+                        <a :href="githubLink" class="btn btn-outline-warning btn-lg px-4">Github</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1 p-0 position-relative overflow-hidden shadow-lg">
+                    <div class="position-lg-absolute top-0 left-0 overflow-hidden">
+                        <img class="img-fluid" :src="imageSrc" :alt="imageAlt" :width="imageWidth">
+                    </div>
+                </div>
             </div>
         </div>`
 });
@@ -394,13 +491,13 @@ app.component('slogan', {
     template: 
         `<div class="bg-dark text-secondary px-4 py-5 text-center">
             <div class="py-5">
-            <h1 class="display-5 fw-bold text-white">{{ title }}</h1>
-            <div class="col-lg-6 mx-auto">
-                <p class="fs-5 mb-4">{{ slogan }}</p>
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <a :href="githublink" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Github</a>
+                <h1 class="display-5 fw-bold text-white">{{ title }}</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="fs-5 mb-4">{{ slogan }}</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a :href="githublink" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Github</a>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>`
 })
