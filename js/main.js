@@ -56,7 +56,7 @@ const Home = {
                 <h2 class="pb-2 border-bottom"><b>特色</b></h2>
                 <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
                 <div class="col">
-                    <feature-card title="精實的後端工程" image="images/Laravel.png" technology="Laravel"/>
+                    <feature-card title="實精的後端工程" image="images/Laravel.png" technology="Laravel"/>
                 </div>
                 <div class="col">
                     <feature-card title="優美的前端工程" image="images/Vue.js.png" technology="Vue"/>
@@ -139,35 +139,15 @@ app.component('headers', {
     template: 
         `<div>
             <header>
-                <div class="collapse bg-dark" id="navbarHeader">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-8 col-md-7 py-4">
-                                <h4 class="text-white">{{ aboutMeTitle }}</h4>
-                                <h4 class="text-white">{{ aboutMeContent }}</h4>
-                            </div>
-                            <div class="col-sm-4 offset-md-1 py-4">
-                                <h4 class="text-white">{{ contactTitle }}</h4>
-                                <ul class="list-unstyled">
-                                    <li><h4 class="text-white">Email: {{ email }}</h4></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="navbar navbar-dark bg-dark shadow-sm">
                     <div class="container">
                         <a href="#" class="navbar-brand d-flex align-items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                             <strong>Work</strong>
                         </a>
                         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                            <li><a class="nav-link px-2 text-white"><router-link to="/">Home</router-link></a></li>
-                            <li><a class="nav-link px-2 text-white"><router-link to="/about">About</router-link></a></li>
+                            <li><a class="nav-link px-2 text-white"><router-link to="/">首頁</router-link></router-link></router-link></a></li>
+                            <li><a class="nav-link px-2 text-white"><router-link to="/about">關於</router-link></a></li>
                         </ul>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
                     </div>
                 </div>
             </header>
