@@ -1,5 +1,5 @@
 const Home = {
-    template: 
+    template:
         `<div>
             <headers></headers>
             <banner></banner>
@@ -10,7 +10,7 @@ const Home = {
                         <div class="col-4">
                             <project-card
                                 title="Chronus"
-                                description="一個簡潔有力的任務管理工具"
+                                description="一個藉由Laravel開發的任務管理工具"
                                 image="images/ch.png"
                                 github-link="https://github.com/Diego09182/Chronus"
                             ></project-card>
@@ -26,7 +26,7 @@ const Home = {
                         <div class="col-4">
                             <project-card
                                 title="TNS"
-                                description="一個用Laravel串接台灣新聞API的專案範例"
+                                description="一個藉由Laravel串接台灣新聞API的專案範例"
                                 image="images/TAIWAN.png"
                                 github-link="https://github.com/Diego09182/TNS"
                             ></project-card>
@@ -36,7 +36,7 @@ const Home = {
                         <div class="col-4">
                             <project-card
                                 title="BookShop"
-                                description="簡易的電商網站"
+                                description="一個藉由Laravel開發的簡易電商網站"
                                 image="images/SHOP.png"
                                 github-link="https://github.com/Diego09182/BookStore"
                             ></project-card>
@@ -44,9 +44,35 @@ const Home = {
                         <div class="col-4">
                             <project-card
                                 title="Weather"
-                                description="氣象資料APP"
+                                description="一個藉由Laravel開發的氣象資料APP"
                                 image="images/weather.png"
                                 github-link="https://github.com/Diego09182/Weather"
+                            ></project-card>
+                        </div>
+                        <div class="col-4">
+                            <project-card
+                                title="BLOG"
+                                description="一個藉由Laravel開發的部落格"
+                                image="images/BLOG.png"
+                                github-link="https://github.com/Diego09182/Blog"
+                            ></project-card>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <project-card
+                                title="ProjectManagement"
+                                description="一個使用Laravel開發的專案管理程式"
+                                image="images/ProjectManagement.png"
+                                github-link="https://github.com/Diego09182/ProjectManagement"
+                            ></project-card>
+                        </div>
+                        <div class="col-4">
+                            <project-card
+                                title="TODOLIST"
+                                description="一個使用Laravel、Vue、Tailwind CSS的簡易專案"
+                                image="images/TODOLIST.png"
+                                github-link="https://github.com/Diego09182/TODOLIST"
                             ></project-card>
                         </div>
                     </div>
@@ -56,13 +82,13 @@ const Home = {
                 <h2 class="pb-2 border-bottom"><b>特色</b></h2>
                 <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
                 <div class="col">
-                    <feature-card title="精實的後端工程" image="images/Laravel.png" technology="Laravel"/>
+                    <feature-card title="後端工程" image="images/Laravel.png"/>
                 </div>
                 <div class="col">
-                    <feature-card title="優美的前端工程" image="images/Vue.js.png" technology="Vue"/>
+                    <feature-card title="前端工程" image="images/Vue.js.png"/>
                 </div>
                 <div class="col">
-                    <feature-card title="資料庫查詢優化" image="images/MySQL.png" technology="MySQL"/>
+                    <feature-card title="資料庫" image="images/MySQL.png"/>
                 </div>
                 </div>
             </div>
@@ -105,27 +131,27 @@ const Home = {
             </div>
             <slogan></slogan>
         </div>`
-};  
+};
 
-const About = { 
-    template: 
+const About = {
+    template:
         `<div>
             <headers></headers>
             <about></about>
-        </div>` 
+        </div>`
 }
- 
+
 const routes = [
-  { path: '/', component: Home },
-  { path: '/about', component: About },
+    { path: '/', component: Home },
+    { path: '/about', component: About },
 ]
- 
+
 const router = VueRouter.createRouter({
-  history: VueRouter.createWebHashHistory(),
-  routes,
+    history: VueRouter.createWebHashHistory(),
+    routes,
 })
 
-const app = Vue.createApp({ });
+const app = Vue.createApp({});
 
 app.component('headers', {
     data() {
@@ -136,38 +162,18 @@ app.component('headers', {
             email: 'ssss.gladmasy@gmail.com'
         };
     },
-    template: 
+    template:
         `<div>
             <header>
-                <div class="collapse bg-dark" id="navbarHeader">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-8 col-md-7 py-4">
-                                <h4 class="text-white">{{ aboutMeTitle }}</h4>
-                                <h4 class="text-white">{{ aboutMeContent }}</h4>
-                            </div>
-                            <div class="col-sm-4 offset-md-1 py-4">
-                                <h4 class="text-white">{{ contactTitle }}</h4>
-                                <ul class="list-unstyled">
-                                    <li><h4 class="text-white">Email: {{ email }}</h4></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="navbar navbar-dark bg-dark shadow-sm">
                     <div class="container">
                         <a href="#" class="navbar-brand d-flex align-items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                             <strong>Work</strong>
                         </a>
                         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                            <li><a class="nav-link px-2 text-white"><router-link to="/">Home</router-link></a></li>
-                            <li><a class="nav-link px-2 text-white"><router-link to="/about">About</router-link></a></li>
+                            <li><a class="nav-link px-2 text-white"><router-link to="/">首頁</router-link></router-link></router-link></a></li>
+                            <li><a class="nav-link px-2 text-white"><router-link to="/about">關於</router-link></a></li>
                         </ul>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
                     </div>
                 </div>
             </header>
@@ -176,38 +182,38 @@ app.component('headers', {
 
 app.component('banner', {
     data() {
-      return {
-        i: 0,
-        speed: 400,
-        typedRole: '',
-        name: '張皓明',
-        introduce: '熱愛學習後端工程技術',
-        role: '擅長使用Laravel與Vue開發應用程式',
-        websiteLink: 'https://diego09182.github.io/work/#/',
-        githubLink: 'https://github.com/Diego09182'
-      };
+        return {
+            i: 0,
+            speed: 400,
+            typedRole: '',
+            name: '張皓明',
+            introduce: '熱愛學習後端工程技術',
+            role: '擅長使用Laravel與Vue開發應用程式',
+            websiteLink: 'https://diego09182.github.io/work/#/',
+            githubLink: 'https://github.com/Diego09182'
+        };
     },
     methods: {
-      typeWriter() {
-        if (this.i < this.role.length) {
-          if (this.i < this.role.length) {
-            this.typedRole += this.role.charAt(this.i);
-          }
-          this.i++;
-          setTimeout(this.typeWriter, this.speed);
+        typeWriter() {
+            if (this.i < this.role.length) {
+                if (this.i < this.role.length) {
+                    this.typedRole += this.role.charAt(this.i);
+                }
+                this.i++;
+                setTimeout(this.typeWriter, this.speed);
+            }
+        },
+        openWebsite() {
+            window.location.href = this.websiteLink;
+        },
+        openGithub() {
+            window.location.href = this.githubLink;
         }
-      },
-      openWebsite() {
-        window.location.href = this.websiteLink;
-      },
-      openGithub() {
-        window.location.href = this.githubLink;
-      }
     },
     mounted() {
-      this.typeWriter();
+        this.typeWriter();
     },
-    template: 
+    template:
         `<section class="banner px-3">
             <div class="container overflow-hidden">
                 <div class="row gy-3 gy-lg-0 align-items-lg-center justify-content-lg-between">
@@ -232,30 +238,30 @@ app.component('banner', {
 
 app.component('about', {
     data() {
-      return {
-        i: 0,
-        speed: 200,
-        typedAbout: '',
-        title: '關於我',
-        about: '專精於 Laravel 與 Vue 建立網頁應用程式的工程師。',
-      };
+        return {
+            i: 0,
+            speed: 200,
+            typedAbout: '',
+            title: '關於我',
+            about: '專精於 Laravel 與 Vue 建立網頁應用程式的工程師。',
+        };
     },
     methods: {
-      typeWriter() {
-        if (this.i <= this.about.length) {
-          if (this.i <= this.about.length) {
-            this.typedAbout += this.about.charAt(this.i);
-          }
-          this.i++;
-          setTimeout(this.typeWriter, this.speed);
+        typeWriter() {
+            if (this.i <= this.about.length) {
+                if (this.i <= this.about.length) {
+                    this.typedAbout += this.about.charAt(this.i);
+                }
+                this.i++;
+                setTimeout(this.typeWriter, this.speed);
+            }
         }
-      }
     },
     mounted() {
-      this.typeWriter();
+        this.typeWriter();
     },
-    template: 
-      `<div class="container py-5">
+    template:
+        `<div class="container py-5">
           <h1 class="text-center"><b>{{ title }}</b></h1>
           <div class="text-center">
               <img src="images/Laravel.png" alt="Your Image" class="rounded-circle" id="avatar">
@@ -264,7 +270,7 @@ app.component('about', {
           </div>
       </div>`
 });
-  
+
 app.component('project-card', {
     data() {
         return {
@@ -272,7 +278,7 @@ app.component('project-card', {
         };
     },
     props: ['title', 'description', 'image', 'githubLink'],
-    template: 
+    template:
         `<div class="col">
             <div class="card shadow-sm" class="border border-5 rounded-3">
                 <img :src="image" class="img-fluid" alt="...">
@@ -291,17 +297,13 @@ app.component('project-card', {
 
 app.component('feature-card', {
     props: ['title', 'image', 'technology', 'days'],
-    template: 
+    template:
         `<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg hover" :style="{ backgroundImage: 'url(' + image + ')' }">
             <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                 <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{ title }}</h2>
                 <ul class="d-flex list-unstyled mt-auto">
-                    <li class="me-auto">
-                        <img :src="image" alt="Logo" width="32" height="32" class="rounded-circle border border-white">
-                    </li>
                     <li class="d-flex align-items-center me-3">
                         <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                        <small>{{ technology }}</small>
                     </li>
                     <li class="d-flex align-items-center">
                         <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
@@ -316,7 +318,7 @@ app.component('laravel', {
         return {
             title: 'Laravel',
             subtitle: '一個漸進式的網頁應用開發框架',
-            description: '我使用具有MVC架構、模板引擎、資料庫遷移的PHP框架建構網頁應用程式',
+            description: '具有MVC架構、模板引擎、資料庫遷移的PHP框架',
             officialLink: 'https://laravel.com/',
             githubLink: 'https://github.com/laravel/laravel',
             imageSrc: 'images/Laravel.png',
@@ -324,7 +326,7 @@ app.component('laravel', {
             imageWidth: 720
         };
     },
-    template: 
+    template:
         `<div class="container my-5">
             <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
                 <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
@@ -350,7 +352,7 @@ app.component('vue', {
         return {
             title: 'Vue.js',
             subtitle: '一個漸進式的前端開發框架',
-            description: '我使用具有聲明式渲染與反應性的JavaScript框架建構網頁應用程式',
+            description: '具有聲明式渲染與反應性的JavaScript框架',
             officialLink: 'https://vuejs.org/',
             githubLink: 'https://github.com/vuejs/vue',
             imageSrc: 'images/Vue.js.png',
@@ -358,7 +360,7 @@ app.component('vue', {
             imageWidth: 720
         };
     },
-    template: 
+    template:
         `<div class="container my-5">
             <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
                 <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
@@ -383,8 +385,8 @@ app.component('mysql', {
     data() {
         return {
             title: 'MySQL',
-            subtitle: '一個開放原始碼的關聯式資料庫管理系統',
-            description: '我使用最熱門的資料庫管理系統，支援資料庫服務',
+            subtitle: '一個開放原始碼的關聯式資料庫',
+            description: '最熱門的資料庫，支援資料庫服務',
             officialLink: 'https://www.mysql.com/',
             githubLink: 'https://github.com/mysql/mysql-server',
             imageSrc: 'images/MySQL.png',
@@ -392,7 +394,7 @@ app.component('mysql', {
             imageWidth: 720
         };
     },
-    template: 
+    template:
         `<div class="container my-5">
             <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
                 <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
@@ -426,7 +428,7 @@ app.component('git', {
             imageWidth: 720
         };
     },
-    template: 
+    template:
         `<div class="container my-5">
             <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
                 <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
@@ -459,7 +461,7 @@ app.component('linux', {
             imageWidth: 720
         };
     },
-    template: 
+    template:
         `<div class="container my-5">
             <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
                 <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
@@ -483,12 +485,12 @@ app.component('linux', {
 app.component('slogan', {
     data() {
         return {
-            title:'Web development',
-            slogan:'I am committed to learning web development.',
-            githublink:'https://github.com/Diego09182/work'
+            title: 'Web development',
+            slogan: 'I am committed to learning web development.',
+            githublink: 'https://github.com/Diego09182/work'
         };
     },
-    template: 
+    template:
         `<div class="bg-dark text-secondary px-4 py-5 text-center">
             <div class="py-5">
                 <h1 class="display-5 fw-bold text-white">{{ title }}</h1>
@@ -505,7 +507,7 @@ app.component('slogan', {
 app.component('footers', {
     data() {
         return {
-            copyright: '作品集內容版權所有，但是專案都在 MIT 條款下公開',
+            copyright: '專案都在 MIT 條款下公開',
             author: '張皓明',
             developerDescription: '一個 Laravel 開發者',
             skills: [
