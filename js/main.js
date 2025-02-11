@@ -26,7 +26,7 @@ const Home = {
                         <div class="col-4">
                             <project-card
                                 title="TNS"
-                                description="一個藉由Laravel串接台灣新聞API的專案範例"
+                                description="一個藉由Laravel串接新聞API的專案範例"
                                 image="images/TAIWAN.png"
                                 github-link="https://github.com/Diego09182/TNS"
                             ></project-card>
@@ -453,7 +453,7 @@ app.component('linux', {
         return {
             title: 'Linux',
             subtitle: '一種自由和開放原始碼的類UNIX作業系統',
-            description: '使用開源的作業系統進行開發與部屬',
+            description: '使用開源的作業系統進行開發',
             officialLink: 'https://www.linux.org/pages/download/',
             githubLink: 'https://github.com/torvalds/linux',
             imageSrc: 'images/Linux.png',
@@ -507,19 +507,22 @@ app.component('slogan', {
 app.component('footers', {
     data() {
         return {
-            copyright: '專案都在 MIT 條款下公開',
+            copyright: 'MIT License',
             author: '張皓明',
             developerDescription: '一個 Laravel 開發者',
             skills: [
-                { name: 'Bootstrap', link: 'https://getbootstrap.com/' },
+                { name: 'Laravel', link: 'https://laravel.com/' },
                 { name: 'MySQL', link: 'https://www.mysql.com/' },
                 { name: 'Vue', link: 'https://vuejs.org/' },
-                { name: 'Laravel', link: 'https://laravel.com/' },
+                { name: 'Bootstrap', link: 'https://getbootstrap.com/' },
+                { name: 'Materialize', link: 'https://materializeweb.com/' },
             ],
             projects: [
                 { name: 'SwiftFox', link: 'https://github.com/Diego09182/SwiftFox' },
                 { name: 'Chronus', link: 'https://github.com/Diego09182/Chronus' },
-                { name: 'TNS', link: 'https://github.com/Diego09182/TNS' },
+                { name: 'Weather', link: 'https://github.com/Diego09182/Weather' },
+                { name: 'TODOLIST', link: 'https://github.com/Diego09182/TODOLIST' },
+                { name: 'ProjectManagement', link: 'https://github.com/Diego09182/ProjectManagement' },
             ],
             contact: {
                 email: 'ssss.gladmsasy@gmail.com',
